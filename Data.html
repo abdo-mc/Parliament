@@ -124,7 +124,7 @@
   // قراءة كود العضو من رابط URL
   function getIdFromURL() {
     const params = new URLSearchParams(window.location.search);
-    return params.get('id') || '';
+    return params.get('Code') || '';
   }
 
   // أيقونات SVG للروابط (تليفون، واتساب، سوشيال ميديا)
@@ -135,7 +135,7 @@
   };
 
   async function fetchMemberData(id) {
-    const url = `https://script.google.com/macros/s/AKfycby5tLE8HTUtiQ8Qj99y9Veqt85LIi4eIMCIeTxESHvohpxZm7LTGAn-gUsMdrbCCfUY/exec?id=${encodeURIComponent(id)}`;
+    const url = `https://script.google.com/macros/s/AKfycby5tLE8HTUtiQ8Qj99y9Veqt85LIi4eIMCIeTxESHvohpxZm7LTGAn-gUsMdrbCCfUY/exec?code=${encodeURIComponent(id)}`;
     try {
       const res = await fetch(url);
       if (!res.ok) throw new Error("فشل تحميل البيانات");
@@ -201,4 +201,5 @@
 
 </body>
 </html>
+
 
